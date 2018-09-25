@@ -84,3 +84,14 @@
 2018-09-26 02:05:37,645 INFO l.H.GmailBusinessObject [main] The letters have been deleted! 
 2018-09-26 02:05:37,648 INFO l.H.GmailBusinessObjectTest [main] The test method was completed scientifically 
 2018-09-26 02:05:37,651 INFO l.H.GmailBusinessObjectTest [main] After test method have finished! 
+2018-09-26 02:11:37,460 INFO l.H.GmailBusinessObjectTest [main] Before test method 
+2018-09-26 02:11:43,606 INFO l.H.GmailBusinessObjectTest [main] Test method 
+2018-09-26 02:11:52,621 INFO l.H.GmailBusinessObject [main] We are started to open gmail page 
+2018-09-26 02:11:54,435 INFO l.H.GmailBusinessObject [main] We typed the login/password! 
+2018-09-26 02:12:13,763 INFO l.H.GmailBusinessObject [main] we opened gmail account!!! 
+2018-09-26 02:12:13,904 INFO l.H.GmailBusinessObject [main] We are starting to check the important messages 
+2018-09-26 02:12:16,412 INFO l.H.GmailBusinessObject [main] Messages are checked! 
+2018-09-26 02:12:16,987 INFO l.H.GmailBusinessObject [main] Folder 'Important' was open! 
+2018-09-26 02:12:17,950 INFO l.H.GmailBusinessObject [main] The letters have been deleted! 
+2018-09-26 02:12:17,966 INFO l.H.GmailBusinessObjectTest [main] The test method was completed scientifically 
+2018-09-26 02:12:17,968 INFO l.H.GmailBusinessObjectTest [main] After test method have finished! 

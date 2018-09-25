@@ -3,8 +3,8 @@ package lab7part3.HW4;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-public class Input extends Element {
-    public Input(WebElement webElement) {
+public class TextInput extends Element {
+    public TextInput(WebElement webElement) {
         super(webElement);
     }
 

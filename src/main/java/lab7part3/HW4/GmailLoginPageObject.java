@@ -10,10 +10,10 @@ public class GmailLoginPageObject {
     private WebDriver driver;
 
     @FindBy(css = "input#identifierId")
-    private Input inputLoginField;
+    private TextInput textInputLoginField;
 
     @FindBy(xpath = "//input[@autocomplete = 'current-password']")
-    private Input passwordField;
+    private TextInput passwordField;
 
     @FindBy(xpath = "//*[@class = 'gb_he']")
     private WebElement openGoogleApps;
@@ -27,8 +27,8 @@ public class GmailLoginPageObject {
     }
 
     public void gmailLogin(String email, String password) {
-        inputLoginField.addText(email);
-        inputLoginField.submit();
+        textInputLoginField.addText(email);
+        textInputLoginField.submit();
         passwordField.addText(password);
         passwordField.submit();
     }
