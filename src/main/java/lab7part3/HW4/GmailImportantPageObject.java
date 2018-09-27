@@ -41,11 +41,7 @@ public class GmailImportantPageObject {
 
     public int checkThreeMessages() {
         for (int i = 0; i < messages.size(); i++) {
-//            if (messages.get(i).isSelected())
-//            messages.get(i + 1).click();
-//            else
                 messages.get(i).click();
-            //checkedMessages.add(messages.get(i));
         }
         System.out.println(messages.size());
         return messages.size();
