@@ -1,4 +1,4 @@
-package lab7part3.HW4;
+package lab7part3.HW5;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -8,19 +8,19 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
-public class GmailImportantPageObject {
+public class GmailImportantPO {
 
     private WebDriver driver;
-    List<WebElement> checkedMessages;
 
-    public GmailImportantPageObject(WebDriver driver) {
+    public GmailImportantPO(WebDriver driver) {
         PageFactory.initElements(new CustomFieldDecorator(driver), this);
         this.driver = driver;
     }
 
     @FindAll({
-            @FindBy(css = "div.pH-A7.a9q")
+            @FindBy(css = "div.pG")
     })
     private List<WebElement> messages;
 
@@ -33,32 +33,18 @@ public class GmailImportantPageObject {
     @FindBy(css = "#\\3a 9z > span > span:nth-child(1) > span:nth-child(2)")
     private WebElement importantLetters;
 
-    @FindBy(css = "#\\3a 8o > div.J-J5-Ji.J-JN-M-I-Jm > span")
-    private WebElement selectForDelete;
-
-    @FindBy(xpath = "//*[@id=\":5\"]/div[2]/div[1]/div[1]/div/div/div[2]/div[3]")
-    private WebElement delete;
-
     public int checkThreeMessages() {
-        for (int i = 0; i < messages.size(); i++) {
-//            if (messages.get(i).isSelected())
-//            messages.get(i + 1).click();
-//            else
-                messages.get(i).click();
-            //checkedMessages.add(messages.get(i));
-        }
+
         System.out.println(messages.size());
+        for (int i = 0; i < 3; i++) {
+            driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
+            messages.get(i).click();
+        }
         return messages.size();
     }
 
     public void openImportantFolder() {
         searchField.sendKeys("is:important");
         searchField.sendKeys(Keys.ENTER);
-    }
-
-    public boolean deleteLetters() {
-        selectForDelete.click();
-        delete.click();
-        return selectForDelete.isEnabled();
     }
 }

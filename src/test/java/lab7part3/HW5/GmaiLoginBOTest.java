@@ -1,11 +1,10 @@
-package lab7part3.HW4;
+package lab7part3.HW5;
 
-import lab7part3.HW3.PropertySettings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
+import static org.testng.Assert.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -13,10 +12,10 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class GmailBusinessObjectTest {
+public class GmaiLoginBOTest {
     private WebDriver driver;
 
-    private static final Logger LOGGER = LogManager.getLogger(GmailBusinessObjectTest.class);
+    private static final Logger LOGGER = LogManager.getLogger(GmaiLoginBOTest.class);
     private static String ps = PropertySettings.openProperyFile("driverPath");
 
     static {
@@ -35,10 +34,11 @@ public class GmailBusinessObjectTest {
     public void openGmailAndDeleteImportantMessages() {
         LOGGER.info("Test method");
         driver.get(PropertySettings.openProperyFile("webadress"));
-        GmailBusinessObject gim = new GmailBusinessObject(driver);
-        gim.openGmailAccount(PropertySettings.openProperyFile("email"), PropertySettings.openProperyFile("password"));
-        int number = gim.selectAndDeleteImportantMessages();
-        Assert.assertTrue(number != 0);
+        GmaiLoginBO gim = new GmaiLoginBO(driver);
+        assertTrue(gim.openGmailAccount(PropertySettings.openProperyFile("email"), PropertySettings.openProperyFile("password")));
+        SelectAndDeleteMessagesBO gdbo = new SelectAndDeleteMessagesBO(driver);
+        int number = gdbo.selectAndDeleteImportantMessages();
+        assertNotNull(number);
         LOGGER.info("The test method was completed scientifically");
     }
 
