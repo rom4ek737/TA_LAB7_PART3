@@ -1,4 +1,4 @@
-package lab7part3.HW5;
+package lab7part3.HW5.PO;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class GmailImportantPO {
 
@@ -37,9 +36,13 @@ public class GmailImportantPO {
 
         System.out.println(messages.size());
         for (int i = 0; i < 3; i++) {
-            driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
+            //int k = 0;
+            //driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
+           // if (messages.get(i).isSelected())
+            //messages.get(i + 1).click();
             messages.get(i).click();
         }
+
         return messages.size();
     }
 

@@ -1,5 +1,7 @@
-package lab7part3.HW5;
+package lab7part3.HW5.BO;
 
+import lab7part3.HW5.PO.CustomFieldDecorator;
+import lab7part3.HW5.PO.GmailLoginPO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;

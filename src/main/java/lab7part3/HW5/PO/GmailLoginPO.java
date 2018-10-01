@@ -1,4 +1,4 @@
-package lab7part3.HW5;
+package lab7part3.HW5.PO;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
