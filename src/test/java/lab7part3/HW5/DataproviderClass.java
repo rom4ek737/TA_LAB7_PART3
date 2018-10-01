@@ -6,10 +6,8 @@ import org.testng.annotations.DataProvider;
 public class DataproviderClass {
     private static ChromeDriver driver;
 
-    @DataProvider(name="provider-data", parallel = true)
-//    @DataProvider(name="provider-data")
+    @DataProvider(name = "provider-data", parallel = true)
     public static Object[][] userData() {
-//        driver = new ChromeDriver();
         return new Object[][]{
                 {"roman.zdrok.test", "1@3$5^7*9"},
                 {"roman.zdrok.test2", "1@3$5^7*9"},
